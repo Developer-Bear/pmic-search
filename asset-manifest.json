@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pmic-search/static/css/main.b0b94919.css",
+    "main.css": "/pmic-search/static/css/main.6435ba03.css",
     "main.js": "/pmic-search/static/js/main.836ca803.js",
     "index.html": "/pmic-search/index.html",
-    "main.b0b94919.css.map": "/pmic-search/static/css/main.b0b94919.css.map",
+    "main.6435ba03.css.map": "/pmic-search/static/css/main.6435ba03.css.map",
     "main.836ca803.js.map": "/pmic-search/static/js/main.836ca803.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0b94919.css",
+    "static/css/main.6435ba03.css",
     "static/js/main.836ca803.js"
   ]
 }
