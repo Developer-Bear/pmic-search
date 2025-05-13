@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./App.module.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import partsData from "./data/data.json";
 import GoogleSearchButton from "./components/GoogleSearchButton/GoogleSearchButton";
 import { FaCopy } from "react-icons/fa";
+import { Slide } from "react-toastify/unstyled";
 
 function parsePartInfo(partString) {
 	const regex = /^(\d+)\s*-\s*(.*)$/;
@@ -31,7 +34,17 @@ function copyToClipboard(text) {
 		navigator.clipboard
 			.writeText(text)
 			.then(() => {
-				console.log("Copied to clipboard!");
+				toast.success("Copied to Clipboard!", {
+					position: "top-center",
+					autoClose: 2000,
+					hideProgressBar: false,
+					closeOnClick: false,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "dark",
+					transition: Slide,
+				});
 			})
 			.catch((err) => {
 				console.error("Failed to copy:", err);
@@ -108,13 +121,14 @@ function App() {
 									<strong>Manufacturer #:</strong> {part.part_num}
 								</p>
 								<GoogleSearchButton query={part.manufacturer_num + " " + part.part_num} />
-								<FaCopy onClick={() => copyToClipboard(part.part_num)} />
+								<FaCopy style={{ fontSize: "1.35rem" }} onClick={() => copyToClipboard(part.part_num)} />
 							</div>
 						</div>
 					))
 				) : (
 					<p className={styles.displayedPart}>No parts found</p>
 				)}
+				<ToastContainer />
 			</div>
 		</div>
 	);
