@@ -1,7 +1,8 @@
 import { useState } from "react";
 import styles from "./App.module.css";
 import SearchBar from "./components/SearchBar/SearchBar";
-import partsData from "../data/data.json"; // Import the JSON file
+import partsData from "./data/data.json";
+import GoogleSearchButton from "./components/GoogleSearchButton/GoogleSearchButton";
 
 function parsePartInfo(partString) {
 	const regex = /^(\d+)\s*-\s*(.*)$/;
@@ -20,6 +21,10 @@ function parsePartInfo(partString) {
 	}
 }
 
+function sanitizeManufacturerNumber(num) {
+	return num.replace(/\s*\(Speedway\)/, "");
+}
+
 function App() {
 	const [matchingParts, setMatchingParts] = useState([]);
 	const [searchTime, setSearchTime] = useState(null);
@@ -32,11 +37,14 @@ function App() {
 
 		const startTime = performance.now();
 
-		const result = partsData?.result?.data?.partsSearch.filter((part) => part.name.toLowerCase().includes(query.toLowerCase()));
+		// Filter the parts based on whether the part name or manufacturer_num contains the query
+		const result = partsData?.result?.data?.partsSearch.filter((part) => part.name.toLowerCase().includes(query.toLowerCase()) || part.manufacturer_num?.toLowerCase().includes(query.toLowerCase()));
 
 		const parsedParts = result.map((part) => ({
 			...parsePartInfo(part.name),
 			speedway_pmic: part.speedway_pmic,
+			manufacturer_num: part.manufacturer_num,
+			part_num: sanitizeManufacturerNumber(part.part_num),
 		}));
 
 		setMatchingParts(parsedParts);
@@ -62,15 +70,22 @@ function App() {
 				{matchingParts.length > 0 ? (
 					matchingParts.map((part, index) => (
 						<div key={index} className={styles.displayedPart}>
+							<p>{part.partName}</p>
 							<p>
-								<strong>Part Name:</strong> {part.partName}
+								<strong>SNOW #:</strong> {part.sevenElevenPartNumber}
 							</p>
 							<p>
-								<strong>SNOW Part Number:</strong> {part.sevenElevenPartNumber}
+								<strong>SPWY PMIC #:</strong> {part.speedway_pmic}
 							</p>
 							<p>
-								<strong>SPWY PMIC Part Number:</strong> {part.speedway_pmic}
+								<strong>Manufacturer:</strong> {part.manufacturer_num}
 							</p>
+							<div className={styles.manufacturerNumWrapper}>
+								<p>
+									<strong>Manufacturer #:</strong> {part.part_num}
+								</p>
+								<GoogleSearchButton query={part.manufacturer_num + " " + part.part_num} />
+							</div>
 						</div>
 					))
 				) : (
