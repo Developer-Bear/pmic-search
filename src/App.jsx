@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import partsData from "./data/data.json";
 import GoogleSearchButton from "./components/GoogleSearchButton/GoogleSearchButton";
+import { FaCopy } from "react-icons/fa";
 
 function parsePartInfo(partString) {
 	const regex = /^(\d+)\s*-\s*(.*)$/;
@@ -23,6 +24,28 @@ function parsePartInfo(partString) {
 
 function sanitizeManufacturerNumber(num) {
 	return num.replace(/\s*\(Speedway\)/, "");
+}
+
+function copyToClipboard(text) {
+	if (navigator.clipboard) {
+		navigator.clipboard
+			.writeText(text)
+			.then(() => {
+				console.log("Copied to clipboard!");
+			})
+			.catch((err) => {
+				console.error("Failed to copy:", err);
+			});
+	} else {
+		// Fallback for older browsers
+		const textarea = document.createElement("textarea");
+		textarea.value = text;
+		document.body.appendChild(textarea);
+		textarea.select();
+		document.execCommand("copy");
+		document.body.removeChild(textarea);
+		console.log("Copied using fallback method.");
+	}
 }
 
 function App() {
@@ -85,6 +108,7 @@ function App() {
 									<strong>Manufacturer #:</strong> {part.part_num}
 								</p>
 								<GoogleSearchButton query={part.manufacturer_num + " " + part.part_num} />
+								<FaCopy onClick={() => copyToClipboard(part.part_num)} />
 							</div>
 						</div>
 					))
