@@ -21,10 +21,27 @@
 }
 
 .displayedPart {
-	background-color: #1e2327;
 	margin: 1rem;
 	padding: 0.5rem 1rem;
 	border-radius: 0.25rem;
+	background-color: #1e1e2f;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	transition: transform 0.2s ease;
+}
+
+.part_title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #fff;
+}
+
+.line_label {
+	font-weight: 500;
+	color: #bbb;
+}
+
+.line_data {
+	color: #ddd;
 }
 
 p {

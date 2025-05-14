@@ -106,19 +106,19 @@ function App() {
 				{matchingParts.length > 0 ? (
 					matchingParts.map((part, index) => (
 						<div key={index} className={styles.displayedPart}>
-							<p>{part.partName}</p>
+							<p className={styles.part_title}>{part.partName}</p>
 							<p>
-								<strong>SNOW #:</strong> {part.sevenElevenPartNumber}
+								<span className={styles.line_label}>SNOW #:</span> <span className={styles.line_data}>{part.sevenElevenPartNumber}</span>
 							</p>
 							<p>
-								<strong>SPWY PMIC #:</strong> {part.speedway_pmic}
+								<span className={styles.line_label}>SPWY PMIC #:</span> <span className={styles.line_data}>{part.speedway_pmic}</span>
 							</p>
 							<p>
-								<strong>Manufacturer:</strong> {part.manufacturer_num}
+								<span className={styles.line_label}>Manufacturer:</span> <span className={styles.line_data}>{part.manufacturer_num}</span>
 							</p>
 							<div className={styles.manufacturerNumWrapper}>
 								<p>
-									<strong>Manufacturer #:</strong> {part.part_num}
+									<span className={styles.line_label}>Manufacturer #:</span> <span className={styles.line_data}>{part.part_num}</span>
 								</p>
 								<GoogleSearchButton query={part.manufacturer_num + " " + part.part_num} />
 								<FaCopy style={{ fontSize: "1.35rem" }} onClick={() => copyToClipboard(part.part_num)} />
