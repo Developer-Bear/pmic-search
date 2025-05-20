@@ -74,7 +74,7 @@ function App() {
 		const startTime = performance.now();
 
 		// Filter the parts based on whether the part name or manufacturer_num contains the query
-		const result = partsData?.result?.data?.partsSearch.filter((part) => part.name.toLowerCase().includes(query.toLowerCase()) || part.manufacturer_num?.toLowerCase().includes(query.toLowerCase()));
+		const result = partsData?.partsSearch.filter((part) => part.name.toLowerCase().includes(query.toLowerCase()) || part.manufacturer_num?.toLowerCase().includes(query.toLowerCase()));
 
 		const parsedParts = result.map((part) => ({
 			...parsePartInfo(part.name),
