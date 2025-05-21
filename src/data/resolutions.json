@@ -1,0 +1,82 @@
+{
+	"pulled-hose": {
+		"label": "Pulled Hose",
+		"resolution": "Conducted visual inspection of dispenser; reconnected breakaway coupling and performed pressure/leak test—no leaks detected during testing."
+	},
+	"no-heat": {
+		"label": "No Heat",
+		"resolution": "Reset thermostat and verified furnace operation"
+	},
+	"no-cool": {
+		"label": "No Cool",
+		"resolution": "Cleared condenser coil and confirmed AC is cooling"
+	},
+	"leaking-faucet": {
+		"label": "Leaking Faucet",
+		"resolution": "Replaced faucet cartridge to stop leak"
+	},
+	"clogged-drain": {
+		"label": "Clogged Drain",
+		"resolution": "Cleared blockage with auger – flow restored"
+	},
+	"toilet-not-flushing": {
+		"label": "Toilet Not Flushing",
+		"resolution": "Replaced flapper and adjusted chain"
+	},
+	"tripped-breaker": {
+		"label": "Tripped Breaker",
+		"resolution": "Reset breaker and verified circuit stability"
+	},
+	"dead-outlet": {
+		"label": "Dead Outlet",
+		"resolution": "Replaced GFCI outlet and tested power"
+	},
+	"oven-not-heating": {
+		"label": "Oven Not Heating",
+		"resolution": "Replaced heating element – oven functional"
+	},
+	"coffee-machine-error": {
+		"label": "Coffee Machine Error",
+		"resolution": "Power cycled and cleaned brew group"
+	},
+	"fridge-warm": {
+		"label": "Fridge Warm",
+		"resolution": "Replaced compressor and verified cooling"
+	},
+	"ice-machine-overflow": {
+		"label": "Ice Machine Overflow",
+		"resolution": "Cleared drain line and tested operation"
+	},
+	"door-wont-close": {
+		"label": "Door Won't Close",
+		"resolution": "Adjusted hinges and latch alignment"
+	},
+	"alarm-false-trigger": {
+		"label": "Alarm False Trigger",
+		"resolution": "Replaced faulty sensor – tested clear"
+	},
+	"fuel-dispenser-offline": {
+		"label": "Fuel Dispenser Offline",
+		"resolution": "Rebooted and confirmed communication"
+	},
+	"tank-monitor-disconnected": {
+		"label": "Tank Monitor Disconnected",
+		"resolution": "Reset network connection and verified status"
+	},
+	"panel-low-battery": {
+		"label": "Panel Low Battery",
+		"resolution": "Replaced battery and cleared alert"
+	},
+	"ceiling-tile-damaged": {
+		"label": "Ceiling Tile Damaged",
+		"resolution": "Replaced stained tile with new panel"
+	},
+	"loose-trim": {
+		"label": "Loose Trim",
+		"resolution": "Secured baseboard with construction adhesive"
+	},
+	"leaking-water-heater": {
+		"label": "Leaking Water Heater",
+		"resolution": "Drained tank and replaced faulty valve"
+	}
+}
