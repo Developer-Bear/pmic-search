@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom"; // <-- import useNavigate
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./SearchPage.module.css";
-import SearchBar from "../components/SearchBar/SearchBar";
-import partsData from "../data/data.json";
-import GoogleSearchButton from "../components/GoogleSearchButton/GoogleSearchButton";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import partsData from "../../data/data.json";
+import GoogleSearchButton from "../../components/GoogleSearchButton/GoogleSearchButton";
 import { FaCopy } from "react-icons/fa";
 import { Slide } from "react-toastify/unstyled";
 import { IoArrowBackCircle } from "react-icons/io5";
