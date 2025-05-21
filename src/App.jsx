@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.module.css";
 import { ToastContainer } from "react-toastify";
 import HomePage from "./pages/HomePage/HomePage";
