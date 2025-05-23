@@ -9,7 +9,17 @@ function ResolutionNotesList() {
 	const navigate = useNavigate();
 	const [searchQuery, setSearchQuery] = useState("");
 
-	const filteredResolutions = Object.entries(resolutions).filter(([_, { label }]) => label.toLowerCase().includes(searchQuery.toLowerCase()));
+	// State to track selected option index per resolution key
+	const [selectedOptions, setSelectedOptions] = useState({});
+
+	const filteredResolutions = Object.entries(resolutions).filter(([_, { title }]) => title.toLowerCase().includes(searchQuery.toLowerCase()));
+
+	const handleOptionSelect = (resolutionKey, index) => {
+		setSelectedOptions((prev) => ({
+			...prev,
+			[resolutionKey]: index,
+		}));
+	};
 
 	return (
 		<div className={styles.container}>
@@ -24,15 +34,29 @@ function ResolutionNotesList() {
 
 			<input type="text" placeholder="Search resolutions..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className={styles.searchInput} />
 
-			{filteredResolutions.map(([key, { label, resolution }]) => (
-				<div key={key} className={styles.resolutionContainer}>
-					<div className={styles.titleWrapper}>
-						<h3 className={styles.resolutionTitle}>{label}</h3>
-						<CopyButton text={resolution} />
+			{filteredResolutions.map(([key, { title, options }]) => {
+				const selectedIndex = selectedOptions[key] ?? 0;
+				const selectedResolution = options[selectedIndex];
+
+				return (
+					<div key={key} className={styles.resolutionContainer}>
+						<div className={styles.titleWrapper}>
+							<h3 className={styles.resolutionTitle}>{title}</h3>
+							<CopyButton text={selectedResolution.resolution} />
+						</div>
+						<p className={styles.resolutionDescription}>{selectedResolution.resolution}</p>
+						{options.length > 1 && (
+							<div className={styles.buttonGroup}>
+								{options.map(({ label }, index) => (
+									<button key={label} onClick={() => handleOptionSelect(key, index)} className={index === selectedIndex ? styles.selectedButton : styles.optionButton}>
+										{label}
+									</button>
+								))}
+							</div>
+						)}
 					</div>
-					<p className={styles.resolutionDescription}>{resolution}</p>
-				</div>
-			))}
+				);
+			})}
 		</div>
 	);
 }

@@ -1,7 +1,23 @@
+button {
+	margin: 0;
+	font-size: 0.9rem;
+	padding: 0.5rem 0.5rem;
+	background-color: #999;
+	color: #000;
+}
+
+button:focus {
+	outline: none;
+	box-shadow: none;
+}
+
 .container {
 	display: grid;
 	gap: 1rem;
 	padding: 1rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 .searchInput {
@@ -37,6 +53,18 @@
 
 .resolutionDescription {
 	color: #bbb;
+}
+
+.buttonGroup {
+	margin-top: 0.5rem;
+	display: flex;
+	gap: 0.5rem;
+}
+
+.selectedButton {
+	background-color: #000;
+	color: #999;
+	border: 1px solid #999;
 }
 
 .backButton {

@@ -1,30 +1,158 @@
 {
 	"pulled-hose": {
-		"label": "Pulled Hose",
-		"resolution": "Conducted visual inspection of dispenser; reconnected breakaway coupling and performed pressure/leak test—no leaks detected during testing."
+		"title": "Pulled Hose",
+		"options": [
+			{
+				"label": "Reconnected",
+				"resolution": "Conducted visual inspection of dispenser; reconnected breakaway coupling and performed pressure/leak test—no leaks detected during testing."
+			}
+		]
 	},
 	"cappo-dump-valve": {
-		"label": "Cappuccino Dump Valve",
-		"resolution": "Removed hard water scale from cappuccino valve; tested and confirmed proper operation."
+		"title": "Cappuccino Dump Valve",
+		"options": [
+			{
+				"label": "Cleaned",
+				"resolution": "Removed leaking dump valve from unit, disassembled and cleaned hard water scale from cappuccino valve; tested and confirmed proper operation."
+			},
+			{
+				"label": "Replaced",
+				"resolution": "Removed and replaced cappuccino valve; tested and confirmed proper operation."
+			}
+		]
 	},
 	"fire-valve": {
-		"label": "Tripped Fire Valve",
-		"resolution": "Inspected valve for any damage, reset the activated fire valve within the dispenser, and conducted leak and functional tests to ensure reliable operation."
+		"title": "Tripped Fire/Impact Valve",
+		"options": [
+			{
+				"label": "Reset",
+				"resolution": "Inspected valve for any damage, reset the activated fire valve within the dispenser, and conducted leak and functional tests to ensure reliable operation."
+			}
+		]
 	},
 	"replace-hose": {
-		"label": "Damaged Dispenser Hose",
-		"resolution": "Replaced damaged hose, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+		"title": "Damaged Dispenser Hose",
+		"options": [
+			{
+				"label": "Cracked (R&R)",
+				"resolution": "Replaced cracked, damaged hose, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Leaking (R&R)",
+				"resolution": "Replaced leaking hose, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Leaking (Reseal)",
+				"resolution": "Removed leaking hose, sealed affected connections, reinstalled, and tested thoroughly; all joints remained leak-free under pressure."
+			}
+		]
 	},
 	"replace-whip": {
-		"label": "Damaged Dispenser Whip",
-		"resolution": "Replaced damaged whip, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+		"title": "Damaged Dispenser Whip",
+		"options": [
+			{
+				"label": "Cracked (R&R)",
+				"resolution": "Replaced cracked, damaged whip, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Leaking (R&R)",
+				"resolution": "Replaced leaking whip, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Leaking (Reseal)",
+				"resolution": "Removed leaking whip, sealed affected connections, reinstalled, and tested thoroughly; all joints remained leak-free under pressure."
+			}
+		]
 	},
 	"replace-swivel": {
-		"label": "Damaged Dispenser Swivel",
-		"resolution": "Replaced damaged swivel, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+		"title": "Damaged Dispenser Swivel",
+		"options": [
+			{
+				"label": "Loose (R&R)",
+				"resolution": "Replaced leaking swivel, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Resealed",
+				"resolution": "Removed leaking swivel, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+			}
+		]
 	},
 	"replace-nozzle": {
-		"label": "Damaged Dispenser Nozzle",
-		"resolution": "Replaced damaged nozzle, applied sealer to connection, and tested thoroughly; all joints remain leak-free under pressure."
+		"title": "Damaged Dispenser Nozzle",
+		"options": [
+			{
+				"label": "Spring (R&R)",
+				"resolution": "Failed nozzle hold open clip spring. Replaced damaged nozzle, applied sealer to connection, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Flo-Stop (R&R)",
+				"resolution": "Failed nozzle Flo-Stop device. Replaced damaged nozzle, applied sealer to connection, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Resealed",
+				"resolution": "Removed leaking nozzle, applied sealer to connections, and tested thoroughly; all joints remain leak-free under pressure."
+			}
+		]
+	},
+	"replace-breakaway": {
+		"title": "Breakaway",
+		"options": [
+			{
+				"label": "Leaking",
+				"resolution": "Replaced leaking breakaway, applied sealer to connection, and tested thoroughly; all joints remain leak-free under pressure."
+			},
+			{
+				"label": "Doesn't Reconnect",
+				"resolution": "Replaced damaged breakaway - would not reconnect, applied sealer to connection, and tested thoroughly; all joints remain leak-free under pressure."
+			}
+		]
+	},
+	"fountain-drain": {
+		"title": "Fountain Drain",
+		"options": [
+			{
+				"label": "Cleared",
+				"resolution": "Cleared fountain drain lines using compressed air to remove blockages; followed by flushing with hot water to ensure full drainage and verify unobstructed flow."
+			}
+		]
+	},
+	"ceiling-tile": {
+		"title": "Ceiling Tile",
+		"options": [
+			{
+				"label": "Stained",
+				"resolution": "Removed stained ceiling tile; cut replacement tile to proper dimensions and installed securely in ceiling grid."
+			},
+			{
+				"label": "Broken",
+				"resolution": "Removed broken ceiling tile; cut replacement tile to proper dimensions and installed securely in ceiling grid."
+			},
+			{
+				"label": "Missing",
+				"resolution": "Measured and cut ceiling tiles to appropriate dimensions; installed in areas where tiles were missing to restore full ceiling coverage."
+			}
+		]
+	},
+	"fuel-filters": {
+		"title": "Fuel Filters",
+		"options": [
+			{
+				"label": "PM",
+				"resolution": "Replaced fuel filters as part of scheduled preventive maintenance; conducted pressure test to confirm all connections remained leak-free."
+			},
+			{
+				"label": "Slow Flow",
+				"resolution": "Verified slow flow condition via site server diagnostics; replaced fuel filters on affected dispenser and performed pressure test—no leaks observed."
+			}
+		]
+	},
+	"dispenser-leak": {
+		"title": "Dispenser Leak",
+		"options": [
+			{
+				"label": "no",
+				"resolution": "Performed leak test on dispenser; no leaks detected during inspection. Placed back into service."
+			}
+		]
 	}
 }
